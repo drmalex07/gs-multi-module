@@ -1,14 +1,24 @@
 package hello.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@EnableConfigurationProperties(ServiceProperties.class)
-public class ServiceConfiguration {
+public class ServiceConfiguration 
+{   
+    @ConfigurationProperties("service")
     @Bean
-    public Service service(ServiceProperties properties) {
-        return new Service(properties.getMessage());
+    ServiceProperties properties()
+    {
+        return new ServiceProperties();
+    }
+    
+    @Bean
+    public Service service(@Autowired ServiceProperties props) 
+    {
+        return new Service(props.getMessage());
     }
 }

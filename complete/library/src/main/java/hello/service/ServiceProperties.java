@@ -1,13 +1,7 @@
 package hello.service;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-
-@ConfigurationProperties("service")
-public class ServiceProperties {
-
-    /**
-     * A message for the service.
-     */
+public class ServiceProperties 
+{
     private String message;
 
     public String getMessage() {

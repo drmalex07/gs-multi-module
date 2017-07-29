@@ -13,7 +13,7 @@
         <artifactId>gs-multi-module</artifactId>
         <version>0.1.0</version>
     </parent>
-
+    
     <dependencies>
 
         <dependency>
@@ -43,15 +43,22 @@
             <version>${project.version}</version>
         </dependency>
 
+        <dependency>
+        	<groupId>com.example</groupId>
+        	<artifactId>gs-multi-module-foo-utility</artifactId>
+        	<version>0.2-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
+            
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+        
         </plugins>
     </build>
-
+ 
 </project>
